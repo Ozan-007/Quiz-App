@@ -40,5 +40,18 @@ class Question(models.Model):
         return self.title
 
 
+class Answer(models.Model):
+    question = models.ForeignKey(Question, on_delete=models.CASCADE)
+    answer_exp = models.CharField(max_length=255)
+    is_correct = models.BooleanField(default=False)
+
+    def __str__(self):
+        return self.answer_exp
+
+
+
+
+
+
 
 
