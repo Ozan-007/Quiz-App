@@ -24,9 +24,21 @@ class Quiz(models.Model):
 
 
 class Question(models.Model):
-    quiz = models.ForeignKey(Quiz, on_delete=models.CASCADE)
-    title = models.CharField(max_length=300, verbose_name="question")
 
+    CHOICES = (
+        ( 0, "Easy"),
+        ( 1, "Normal"),
+        ( 2, "Hard"),
+    )
+    quiz = models.ForeignKey(Quiz, on_delete=models.CASCADE)
+    title = models.CharField(max_length=350, verbose_name="question")
+    difficulty = models.IntegerField(choices=CHOICES)
+    date_created = models.DateTimeField(auto_now_add=True)
+    updated_date = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return self.title
+
+
+
+
