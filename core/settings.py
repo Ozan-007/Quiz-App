@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     #third party
     'rest_framework',
-
+    'nested_admin',
     # my-apps
     'quiz_app'
 ]
