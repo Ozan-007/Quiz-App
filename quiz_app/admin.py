@@ -22,3 +22,6 @@ admin.site.register(Category)
 admin.site.register(Quiz, QuizAdmin)
 admin.site.register(Question)
 admin.site.register(Answer)
+
+
+
