@@ -11,7 +11,7 @@ class CategorySerializer(serializers.ModelSerializer):
 
 
 
-class CategoryDetailView(serializers.ModelSerializer):
+class CategoryDetailViewSerializer(serializers.ModelSerializer):
     class Meta:
         model = Quiz
         fields = ("title", "question_count")
