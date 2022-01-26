@@ -14,5 +14,5 @@ class CategoryList(generics.ListAPIView):
 
     def get_queryset(self):
         category = self.kwargs['category']
-        queryset  = Quiz.objects.filter(category__name = category)
+        queryset  = Quiz.objects.filter(category__name = category) # " category__" allows us to reach the parent class attributes.
         return queryset
