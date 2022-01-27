@@ -1,6 +1,6 @@
 from rest_framework import generics
 from .models import Category, Question, Quiz
-from .serializers import CategorySerializer
+from .serializers import CategorySerializer, QuestionSerializer
 # Create your views here.
 
 class CategoryView(generics.ListAPIView):
@@ -18,6 +18,8 @@ class CategoryList(generics.ListAPIView):
 
 
 class QuizDetail(generics.ListAPIView):
+
+    serializer_class = QuestionSerializer
 
     def get_queryset(self):
         title = self.kwargs['title']

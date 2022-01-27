@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from quiz_app.models import Category, Quiz
+from quiz_app.models import Answer, Category, Question, Quiz
 
 
 class CategorySerializer(serializers.ModelSerializer):
@@ -15,3 +15,23 @@ class CategoryDetailViewSerializer(serializers.ModelSerializer):
     class Meta:
         model = Quiz
         fields = ("title", "question_count")
+
+
+
+class AnswerSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Answer
+        fields = ("answer_exp","is_correct")
+
+class QuestionSerializer(serializers.ModelSerializer):
+
+    answer = AnswerSerializer(many=True, read_only=True)
+    class Meta:
+        model = Question
+        fields = ("title","answer","difficulty")
+
+
+
+
+
+
