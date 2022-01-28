@@ -45,7 +45,7 @@ class Question(models.Model):
 
 
 class Answer(models.Model):
-    question = models.ForeignKey(Question, on_delete=models.CASCADE)
+    question = models.ForeignKey(Question, on_delete=models.CASCADE, related_name='answer')
     answer_exp = models.CharField(max_length=255)
     is_correct = models.BooleanField(default=False)
     updated = models.DateTimeField(auto_now=True)
