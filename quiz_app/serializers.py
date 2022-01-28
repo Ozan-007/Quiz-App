@@ -21,16 +21,19 @@ class CategoryDetailViewSerializer(serializers.ModelSerializer):
 class AnswerSerializer(serializers.ModelSerializer):
     class Meta:
         model = Answer
-        fields = ("answer_exp","is_correct")
+        fields = ("id","answer_exp","is_correct")
 
 class QuestionSerializer(serializers.ModelSerializer):
 
     answer = AnswerSerializer(many=True, read_only=True)
+    difficulty = serializers.SerializerMethodField()
     class Meta:
         model = Question
         fields = ("title","answer","difficulty")
 
 
+    def get_difficulty(self,obj):
+        return obj.get_difficulty_display()
 
 
 
