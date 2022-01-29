@@ -35,7 +35,7 @@ class Question(models.Model):
         ( 2, "Hard"),
     )
     quiz = models.ForeignKey(Quiz, on_delete=models.CASCADE)
-    title = models.CharField(max_length=350, verbose_name="question")
+    title = models.CharField(max_length=350, verbose_name="Question Title")
     difficulty = models.IntegerField(choices=CHOICES)
     date_created = models.DateTimeField(auto_now_add=True)
     updated_date = models.DateTimeField(auto_now=True)
