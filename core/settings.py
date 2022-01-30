@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'nested_admin',
     # my-apps
-    'quiz_app'
+    'quiz_app',
+    'users',
 ]
 
 MIDDLEWARE = [
