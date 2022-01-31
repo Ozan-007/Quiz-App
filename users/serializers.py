@@ -1,10 +1,8 @@
 from rest_framework import serializers
 from django.contrib.auth.models import User
-from django.contrib.auth.forms import UserCreationForm
 
 
-class RegisterSerializer(UserCreationForm):
-    email = serializers.EmailField(required=True,)
+class RegisterSerializer(serializers.ModelSerializer):
     
     class Meta:
         model = User
