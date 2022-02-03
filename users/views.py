@@ -5,6 +5,6 @@ from django.contrib.auth.models import User
 from users.serializers import RegisterSerializer
 # Create your views here.
 
-class RegisterViews(generics.ListAPIView):
+class RegisterView(generics.CreateAPIView):
     queryset = User.object.all()
     serializer_class = RegisterSerializer
